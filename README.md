@@ -20,8 +20,6 @@ You can  [contact us directly!](http://www.imergo.com) or create an GiHub issue.
 
 ## Basic usage
 
-### Import the cassandra-persistence module
-
 ```javascript
 "use strict";
 let typly = require("typly");
