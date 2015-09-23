@@ -12,13 +12,13 @@ describe("typly", function ()
       assert.ok(typr.isInstanceOf(new Object(), Object));
     });
   });
-  describe("#verifyInstanceOf", function ()
+  describe("#assertInstanceOf", function ()
   {
     it("should throw a TypeError for numbers", function ()
     {
       assert.throws(function ()
       {
-        typr.verifyInstanceOf(5, Object);
+        typr.assertInstanceOf(5, Object);
       }, TypeError);
     });
   });
@@ -29,20 +29,20 @@ describe("typly", function ()
       assert.ok(typr.isNumber(5));
     });
   });
-  describe("#verifyNumber", function ()
+  describe("#assertNumber", function ()
   {
     it("should throw a TypeError for objects", function ()
     {
       assert.throws(function ()
       {
-        typr.verifyNumber({});
+        typr.assertNumber({});
       }, TypeError);
     });
     it("should throw a RangeError for an invalid range", function ()
     {
       assert.throws(function ()
       {
-        typr.verifyNumber(9, 0, 5);
+        typr.assertNumber(9, 0, 5);
       }, RangeError);
     });
   });
@@ -53,13 +53,13 @@ describe("typly", function ()
       assert.ok(typr.isString("Example"));
     });
   });
-  describe("#verifyString", function ()
+  describe("#assertString", function ()
   {
     it("should throw a TypeError for objects", function ()
     {
       assert.throws(function ()
       {
-        typr.verifyString({});
+        typr.assertString({});
       }, TypeError);
     });
   });
@@ -70,13 +70,13 @@ describe("typly", function ()
       assert.ok(typr.isUri("http://www.example.com"));
     });
   });
-  describe("#verifyUri", function ()
+  describe("#assertUri", function ()
   {
     it("should throw a TypeError for invalid uris", function ()
     {
       assert.throws(function ()
       {
-        assert.ok(typr.verifyUri("Example"));
+        assert.ok(typr.assertUri("Example"));
       }, TypeError);
     });
   });
@@ -88,13 +88,13 @@ describe("typly", function ()
       assert.ok(typr.isArray(new Array()));
     });
   });
-  describe("#verifyArray", function ()
+  describe("#assertArray", function ()
   {
     it("should throw a TypeError for objects", function ()
     {
       assert.throws(function ()
       {
-        typr.verifyArray({});
+        typr.assertArray({});
       }, TypeError);
     });
   });
@@ -106,13 +106,13 @@ describe("typly", function ()
       assert.ok(typr.isBoolean(false));
     });
   });
-  describe("#verifyBoolean", function ()
+  describe("#assertBoolean", function ()
   {
     it("should throw a TypeError for objects", function ()
     {
       assert.throws(function ()
       {
-        typr.verifyBoolean({});
+        typr.assertBoolean({});
       }, TypeError);
     });
   });
@@ -123,13 +123,13 @@ describe("typly", function ()
       assert.ok(typr.isDate(new Date()));
     });
   });
-  describe("#verifyDate", function ()
+  describe("#assertDate", function ()
   {
     it("should throw a TypeError for objects", function ()
     {
       assert.throws(function ()
       {
-        typr.verifyDate({});
+        typr.assertDate({});
       }, TypeError);
     });
   });
