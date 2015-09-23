@@ -1,0 +1,22 @@
+{
+  "name": "typly",
+  "version": "0.1.0",
+  "description": "imergo type checker",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webcc/typly.git"
+  },
+  "author": {
+    "name": "Web Compliance Center",
+    "email": "webcc@fit.fraunhofer.de"
+  },
+  "dependencies": {
+    "underscore": "1.8.3"
+  },
+  "license": {
+    "type": "Apache-2.0",
+    "url": "https://github.com/webcc/typly/blob/master/LICENSE.md"
+  },
+  "homepage": "https://github.com/webcc/typly"
+}
