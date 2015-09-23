@@ -57,18 +57,18 @@ class Person {
     this.lastName = lastName;
   }
   get firstName() {
-    return this.\_firstName;
+    return this._firstName;
   }
   set firstName(firstName) {
     typly.assertString(firstName);
-    this.\_firstName = firstName;
+    this._firstName = firstName;
   }
   get lastName() {
-    return this.\_lastName;
+    return this._lastName;
   }
   set lastName(lastName) {
     typly.assertString(lastName);
-    this.\_lastName = lastName;
+    this._lastName = lastName;
   }
 }
 let max = new Person('Max', 'Mustermann');
