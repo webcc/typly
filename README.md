@@ -95,8 +95,8 @@ let somebodyElse = new Person(4711, 'Mustermann');  // Output: TypeError: string
 | ------------- | ------------- |
 | ```assertInstanceOf(value)```  | Assert that a value is an instance of a given prototype.  |
 | ```assertNumber(value, config?)```  | Assert that a value is a number.  |
-| ```assertString(value)```  | Assert that a value is an instance of a given prototype.  |
-| ```assertUri(value)```  | Assert that a value is a number.  |
-| ```assertArray(value)```  | Assert that a value is an instance of a given prototype.  |
-| ```assertBoolean(value)```  | Assert that a value is a number.  |
-| ```assertDate(value)```  | Assert that a value is an instance of a given prototype.  |
+| ```assertString(value)```  | Assert that a value is a string..  |
+| ```assertUri(value)```  | Assert that a value is an uri.  |
+| ```assertArray(value)```  | Assert that a value is an array.  |
+| ```assertBoolean(value)```  | Assert that a value is a boolean..  |
+| ```assertDate(value)```  | Assert that a value is a date.  |
