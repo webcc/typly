@@ -81,7 +81,7 @@ let somebodyElse = new Person(4711, 'Mustermann');  // Output: TypeError: string
 
 | Method  | Description |
 | ------------- | ------------- |
-| ```isInstanceOf(value)```  | Check if a value is an instance of a given prototype.  |
+| ```isInstanceOf(value, prototype)```  | Check if a value is an instance of a given prototype.  |
 | ```isNumber(value, config?)```  | Check if a value is a number.  |
 | ```isString(value)```  | Check if a value is a string.  |
 | ```isUri(value)```  | Check if a value is an uri.  |
@@ -93,7 +93,7 @@ let somebodyElse = new Person(4711, 'Mustermann');  // Output: TypeError: string
 
 | Method  | Description |
 | ------------- | ------------- |
-| ```assertInstanceOf(value)```  | Assert that a value is an instance of a given prototype.  |
+| ```assertInstanceOf(value, prototype)```  | Assert that a value is an instance of a given prototype.  |
 | ```assertNumber(value, config?)```  | Assert that a value is a number.  |
 | ```assertString(value)```  | Assert that a value is a string..  |
 | ```assertUri(value)```  | Assert that a value is an uri.  |
