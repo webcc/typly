@@ -76,7 +76,7 @@ let somebodyElse = new Person(4711, 'Mustermann');  // Output: TypeError: string
 ```
 
 ### Ignoring null values
-Sometimes you may want to allow null values for properties. In this case you can use the ```config()``` method as shown in the following code snippet:
+Sometimes you may want to allow null values for properties. In this case you can use the `config()` method as shown in the following code snippet:
 
 ```javascript
 // let somebody = new Person(null, null);   // Output: TypeError: string expected, but got null
