@@ -28,6 +28,17 @@ describe("typly", function ()
     {
       assert.ok(typr.isNumber(5));
     });
+    it("should check if a number is in a given range", function ()
+    {
+      assert.ok(typr.isNumber(5, {
+        min: 0,
+        max: 5
+      }));
+      assert.ok(!typr.isNumber(-1, {
+        min: 0,
+        max: 5
+      }));
+    });
   });
   describe("#assertNumber", function ()
   {
@@ -42,7 +53,10 @@ describe("typly", function ()
     {
       assert.throws(function ()
       {
-        typr.assertNumber(9, 0, 5);
+        typr.assertNumber(9, {
+          min: 0,
+          max: 5
+        });
       }, RangeError);
     });
   });
