@@ -93,7 +93,7 @@ let somebodyElse = new Person(null, null);  // Works
 | Method  | Description |
 | ------------- | ------------- |
 | ```isInstanceOf(value, prototype)```  | Check if a value is an instance of a given prototype.  |
-| ```isNumber(value, config?)```  | Check if a value is a number.  |
+| ```isNumber(value)```  | Check if a value is a number.  |
 | ```isString(value)```  | Check if a value is a string.  |
 | ```isUri(value)```  | Check if a value is an uri.  |
 | ```isArray(value)```  | Check if a value is an array.  |
