@@ -1,6 +1,6 @@
 "use strict";
 let assert = require('assert');
-let typr = require("../lib/typly");
+let typly = require("../lib/typly");
 
 describe("typly", function ()
 {
@@ -8,12 +8,12 @@ describe("typly", function ()
   {
     it("should pass for objects", function ()
     {
-      assert.ok(typr.isInstanceOf({}, Object));
-      assert.ok(typr.isInstanceOf(new Object(), Object));
+      assert.ok(typly.isInstanceOf({}, Object));
+      assert.ok(typly.isInstanceOf(new Object(), Object));
     });
     it("should return false for null", function ()
     {
-      assert.ok(!typr.isInstanceOf(null, Object));
+      assert.ok(!typly.isInstanceOf(null, Object));
     });
   });
   describe("#assertInstanceOf", function ()
@@ -22,14 +22,14 @@ describe("typly", function ()
     {
       assert.throws(function ()
       {
-        typr.assertInstanceOf(5, Object);
+        typly.assertInstanceOf(5, Object);
       }, TypeError);
     });
     it("should throw a TypeError for null", function ()
     {
       assert.throws(function ()
       {
-        typr.assertInstanceOf(null, Object);
+        typly.assertInstanceOf(null, Object);
       }, TypeError);
     });
   });
@@ -37,22 +37,22 @@ describe("typly", function ()
   {
     it("should pass for numbers", function ()
     {
-      assert.ok(typr.isNumber(5));
+      assert.ok(typly.isNumber(5));
     });
     it("should check if a number is in a given range", function ()
     {
-      assert.ok(typr.isNumber(5, {
+      assert.ok(typly.isNumber(5, {
         min: 0,
         max: 5
       }));
-      assert.ok(!typr.isNumber(-1, {
+      assert.ok(!typly.isNumber(-1, {
         min: 0,
         max: 5
       }));
     });
     it("should return false for null", function ()
     {
-      assert.ok(!typr.isNumber(null));
+      assert.ok(!typly.isNumber(null));
     });
   });
   describe("#assertNumber", function ()
@@ -61,14 +61,14 @@ describe("typly", function ()
     {
       assert.throws(function ()
       {
-        typr.assertNumber({});
+        typly.assertNumber({});
       }, TypeError);
     });
     it("should throw a RangeError for an invalid range", function ()
     {
       assert.throws(function ()
       {
-        typr.assertNumber(9, {
+        typly.assertNumber(9, {
           min: 0,
           max: 5
         });
@@ -78,7 +78,7 @@ describe("typly", function ()
     {
       assert.throws(function ()
       {
-        typr.assertNumber(null);
+        typly.assertNumber(null);
       }, TypeError);
     });
   });
@@ -86,11 +86,11 @@ describe("typly", function ()
   {
     it("should pass for strings", function ()
     {
-      assert.ok(typr.isString("Example"));
+      assert.ok(typly.isString("Example"));
     });
     it("should return false for null", function ()
     {
-      assert.ok(!typr.isString(null));
+      assert.ok(!typly.isString(null));
     });
   });
   describe("#assertString", function ()
@@ -99,14 +99,14 @@ describe("typly", function ()
     {
       assert.throws(function ()
       {
-        typr.assertString({});
+        typly.assertString({});
       }, TypeError);
     });
     it("should throw a TypeError for null", function ()
     {
       assert.throws(function ()
       {
-        typr.assertString(null);
+        typly.assertString(null);
       }, TypeError);
     });
   });
@@ -114,11 +114,11 @@ describe("typly", function ()
   {
     it("should pass for uris", function ()
     {
-      assert.ok(typr.isUri("http://www.example.com"));
+      assert.ok(typly.isUri("http://www.example.com"));
     });
     it("should return false for null", function ()
     {
-      assert.ok(!typr.isUri(null));
+      assert.ok(!typly.isUri(null));
     });
   });
   describe("#assertUri", function ()
@@ -127,14 +127,14 @@ describe("typly", function ()
     {
       assert.throws(function ()
       {
-        assert.ok(typr.assertUri("Example"));
+        assert.ok(typly.assertUri("Example"));
       }, TypeError);
     });
     it("should throw a TypeError for null", function ()
     {
       assert.throws(function ()
       {
-        typr.assertUri(null);
+        typly.assertUri(null);
       }, TypeError);
     });
   });
@@ -142,12 +142,12 @@ describe("typly", function ()
   {
     it("should pass for arrays", function ()
     {
-      assert.ok(typr.isArray([]));
-      assert.ok(typr.isArray(new Array()));
+      assert.ok(typly.isArray([]));
+      assert.ok(typly.isArray(new Array()));
     });
     it("should return false for null", function ()
     {
-      assert.ok(!typr.isArray(null));
+      assert.ok(!typly.isArray(null));
     });
   });
   describe("#assertArray", function ()
@@ -156,14 +156,14 @@ describe("typly", function ()
     {
       assert.throws(function ()
       {
-        typr.assertArray({});
+        typly.assertArray({});
       }, TypeError);
     });
     it("should throw a TypeError for null", function ()
     {
       assert.throws(function ()
       {
-        typr.assertArray(null);
+        typly.assertArray(null);
       }, TypeError);
     });
   });
@@ -171,12 +171,12 @@ describe("typly", function ()
   {
     it("should pass for booleans", function ()
     {
-      assert.ok(typr.isBoolean(true));
-      assert.ok(typr.isBoolean(false));
+      assert.ok(typly.isBoolean(true));
+      assert.ok(typly.isBoolean(false));
     });
     it("should return false for null", function ()
     {
-      assert.ok(!typr.isBoolean(null));
+      assert.ok(!typly.isBoolean(null));
     });
   });
   describe("#assertBoolean", function ()
@@ -185,14 +185,14 @@ describe("typly", function ()
     {
       assert.throws(function ()
       {
-        typr.assertBoolean({});
+        typly.assertBoolean({});
       }, TypeError);
     });
     it("should throw a TypeError for null", function ()
     {
       assert.throws(function ()
       {
-        typr.assertBoolean(null);
+        typly.assertBoolean(null);
       }, TypeError);
     });
   });
@@ -200,11 +200,11 @@ describe("typly", function ()
   {
     it("should pass for dates", function ()
     {
-      assert.ok(typr.isDate(new Date()));
+      assert.ok(typly.isDate(new Date()));
     });
     it("should return false for null", function ()
     {
-      assert.ok(!typr.isDate(null));
+      assert.ok(!typly.isDate(null));
     });
   });
   describe("#assertDate", function ()
@@ -213,14 +213,14 @@ describe("typly", function ()
     {
       assert.throws(function ()
       {
-        typr.assertDate({});
+        typly.assertDate({});
       }, TypeError);
     });
     it("should throw a TypeError for null", function ()
     {
       assert.throws(function ()
       {
-        typr.assertDate(null);
+        typly.assertDate(null);
       }, TypeError);
     });
   });
@@ -230,18 +230,18 @@ describe("typly", function ()
     {
       assert.throws(function ()
       {
-        typr.assertNumber(null);
+        typly.assertNumber(null);
       }, TypeError);
-      typr.config({
+      typly.config({
         ignoreNullValues: true
       });
-      assert.ok(typr.assertNumber(null));
-      typr.config({
+      assert.ok(typly.assertNumber(null));
+      typly.config({
         ignoreNullValues: false
       });
       assert.throws(function ()
       {
-        typr.assertNumber(null);
+        typly.assertNumber(null);
       }, TypeError);
     });
   });
