@@ -79,20 +79,24 @@ let somebodyElse = new Person(4711, 'Mustermann');  // Output: TypeError: string
 
 ### Check types
 
-- **isInstanceOf**: Check if a value is an instance of a given prototype.
-- **isNumber**: Check if a value is a number.
-- **isString**: Check if a value is a string.
-- **isUri**: Check if a value is an uri.
-- **isArray**: Check if a value is an array.
-- **isBoolean**: Check if a value is a boolean.
-- **isDate**: Check if a value is a date.
+| Method  | Description |
+| ------------- | ------------- |
+| ```isInstanceOf(value)```  | Check if a value is an instance of a given prototype.  |
+| ```isNumber(value, config?)```  | Check if a value is a number.  |
+| ```isString(value)```  | Check if a value is a string.  |
+| ```isUri(value)```  | Check if a value is an uri.  |
+| ```isArray(value)```  | Check if a value is an array.  |
+| ```isBoolean(value)```  | Check if a value is a boolean.  |
+| ```isDate(value)```  | Check if a value is a date.  |
   
 ## Assert types
 
-- **assertInstanceOf**: Assert that a value is an instance of a given prototype.
-- **assertNumber**: Assert that a value is a number.
-- **assertString**: Assert that a value is a string.
-- **assertUri**: Assert that a value is an uri.
-- **assertArray**: Assert that a value is an array.
-- **assertBoolean**: Assert that a value is a boolean.
-- **assertDate**: Assert that a value is a date.
+| Method  | Description |
+| ------------- | ------------- |
+| ```assertInstanceOf(value)```  | Assert that a value is an instance of a given prototype.  |
+| ```assertNumber(value, config?)```  | Assert that a value is a number.  |
+| ```assertString(value)```  | Assert that a value is an instance of a given prototype.  |
+| ```assertUri(value)```  | Assert that a value is a number.  |
+| ```assertArray(value)```  | Assert that a value is an instance of a given prototype.  |
+| ```assertBoolean(value)```  | Assert that a value is a number.  |
+| ```assertDate(value)```  | Assert that a value is an instance of a given prototype.  |
