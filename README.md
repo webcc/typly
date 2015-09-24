@@ -75,6 +75,17 @@ let max = new Person('Max', 'Mustermann');
 let somebodyElse = new Person(4711, 'Mustermann');  // Output: TypeError: string expected, but got number
 ```
 
+### Ignoring null values
+Sometimes you may want to allow null values for properties. In this case you can use the ```config()``` method as shown in the following code snippet:
+
+```javascript
+// let somebody = new Person(null, null);   // Output: TypeError: string expected, but got null
+typly.config({
+  ignoreNullValues: true
+});
+let somebodyElse = new Person(null, null);  // Works
+```
+
 ## API
 
 ### Check types
