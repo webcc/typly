@@ -11,6 +11,10 @@ describe("typly", function ()
       assert.ok(typr.isInstanceOf({}, Object));
       assert.ok(typr.isInstanceOf(new Object(), Object));
     });
+    it("should return false for null", function ()
+    {
+      assert.ok(!typr.isInstanceOf(null, Object));
+    });
   });
   describe("#assertInstanceOf", function ()
   {
@@ -19,6 +23,13 @@ describe("typly", function ()
       assert.throws(function ()
       {
         typr.assertInstanceOf(5, Object);
+      }, TypeError);
+    });
+    it("should throw a TypeError for null", function ()
+    {
+      assert.throws(function ()
+      {
+        typr.assertInstanceOf(null, Object);
       }, TypeError);
     });
   });
@@ -38,6 +49,10 @@ describe("typly", function ()
         min: 0,
         max: 5
       }));
+    });
+    it("should return false for null", function ()
+    {
+      assert.ok(!typr.isNumber(null));
     });
   });
   describe("#assertNumber", function ()
@@ -59,12 +74,23 @@ describe("typly", function ()
         });
       }, RangeError);
     });
+    it("should throw a TypeError for null", function ()
+    {
+      assert.throws(function ()
+      {
+        typr.assertNumber(null);
+      }, TypeError);
+    });
   });
   describe("#isString", function ()
   {
     it("should pass for strings", function ()
     {
       assert.ok(typr.isString("Example"));
+    });
+    it("should return false for null", function ()
+    {
+      assert.ok(!typr.isString(null));
     });
   });
   describe("#assertString", function ()
@@ -76,12 +102,23 @@ describe("typly", function ()
         typr.assertString({});
       }, TypeError);
     });
+    it("should throw a TypeError for null", function ()
+    {
+      assert.throws(function ()
+      {
+        typr.assertString(null);
+      }, TypeError);
+    });
   });
   describe("#isUri", function ()
   {
     it("should pass for uris", function ()
     {
       assert.ok(typr.isUri("http://www.example.com"));
+    });
+    it("should return false for null", function ()
+    {
+      assert.ok(!typr.isUri(null));
     });
   });
   describe("#assertUri", function ()
@@ -93,6 +130,13 @@ describe("typly", function ()
         assert.ok(typr.assertUri("Example"));
       }, TypeError);
     });
+    it("should throw a TypeError for null", function ()
+    {
+      assert.throws(function ()
+      {
+        typr.assertUri(null);
+      }, TypeError);
+    });
   });
   describe("#isArray", function ()
   {
@@ -100,6 +144,10 @@ describe("typly", function ()
     {
       assert.ok(typr.isArray([]));
       assert.ok(typr.isArray(new Array()));
+    });
+    it("should return false for null", function ()
+    {
+      assert.ok(!typr.isArray(null));
     });
   });
   describe("#assertArray", function ()
@@ -111,6 +159,13 @@ describe("typly", function ()
         typr.assertArray({});
       }, TypeError);
     });
+    it("should throw a TypeError for null", function ()
+    {
+      assert.throws(function ()
+      {
+        typr.assertArray(null);
+      }, TypeError);
+    });
   });
   describe("#isBoolean", function ()
   {
@@ -118,6 +173,10 @@ describe("typly", function ()
     {
       assert.ok(typr.isBoolean(true));
       assert.ok(typr.isBoolean(false));
+    });
+    it("should return false for null", function ()
+    {
+      assert.ok(!typr.isBoolean(null));
     });
   });
   describe("#assertBoolean", function ()
@@ -129,12 +188,23 @@ describe("typly", function ()
         typr.assertBoolean({});
       }, TypeError);
     });
+    it("should throw a TypeError for null", function ()
+    {
+      assert.throws(function ()
+      {
+        typr.assertBoolean(null);
+      }, TypeError);
+    });
   });
   describe("#isDate", function ()
   {
     it("should pass for dates", function ()
     {
       assert.ok(typr.isDate(new Date()));
+    });
+    it("should return false for null", function ()
+    {
+      assert.ok(!typr.isDate(null));
     });
   });
   describe("#assertDate", function ()
@@ -144,6 +214,13 @@ describe("typly", function ()
       assert.throws(function ()
       {
         typr.assertDate({});
+      }, TypeError);
+    });
+    it("should throw a TypeError for null", function ()
+    {
+      assert.throws(function ()
+      {
+        typr.assertDate(null);
       }, TypeError);
     });
   });
