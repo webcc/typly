@@ -98,5 +98,5 @@ let somebodyElse = new Person(4711, 'Mustermann');  // Output: TypeError: string
 | ```assertString(value)```  | Assert that a value is a string..  |
 | ```assertUri(value)```  | Assert that a value is an uri.  |
 | ```assertArray(value)```  | Assert that a value is an array.  |
-| ```assertBoolean(value)```  | Assert that a value is a boolean..  |
+| ```assertBoolean(value)```  | Assert that a value is a boolean.  |
 | ```assertDate(value)```  | Assert that a value is a date.  |
