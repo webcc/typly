@@ -18,5 +18,8 @@
     "type": "Apache-2.0",
     "url": "https://github.com/webcc/typly/blob/master/LICENSE.md"
   },
+  "engines": {
+    "node": ">=4.1.0"
+  },
   "homepage": "https://github.com/webcc/typly"
 }
