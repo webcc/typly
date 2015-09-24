@@ -224,4 +224,25 @@ describe("typly", function ()
       }, TypeError);
     });
   });
+  describe("#config", function ()
+  {
+    it("should allow to set ignoring null values", function ()
+    {
+      assert.throws(function ()
+      {
+        typr.assertNumber(null);
+      }, TypeError);
+      typr.config({
+        ignoreNullValues: true
+      });
+      assert.ok(typr.assertNumber(null));
+      typr.config({
+        ignoreNullValues: false
+      });
+      assert.throws(function ()
+      {
+        typr.assertNumber(null);
+      }, TypeError);
+    });
+  });
 });
