@@ -39,17 +39,6 @@ describe("typly", function ()
     {
       assert.ok(typly.isNumber(5));
     });
-    it("should check if a number is in a given range", function ()
-    {
-      assert.ok(typly.isNumber(5, {
-        min: 0,
-        max: 5
-      }));
-      assert.ok(!typly.isNumber(-1, {
-        min: 0,
-        max: 5
-      }));
-    });
     it("should return false for null", function ()
     {
       assert.ok(!typly.isNumber(null));
@@ -64,6 +53,15 @@ describe("typly", function ()
         typly.assertNumber({});
       }, TypeError);
     });
+    it("should throw a TypeError with correct message", function ()
+    {
+      assert.throws(function ()
+      {
+        typly.assertNumber({});
+      }, function(error) {
+        return error.message === "number expected, but got Object";
+      });
+    });
     it("should throw a RangeError for an invalid range", function ()
     {
       assert.throws(function ()
@@ -73,6 +71,10 @@ describe("typly", function ()
           max: 5
         });
       }, RangeError);
+      assert.ok(typly.assertNumber(5, {
+        min: 0,
+        max: 5
+      }));
     });
     it("should throw a TypeError for null", function ()
     {
