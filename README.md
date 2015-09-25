@@ -117,7 +117,7 @@ let max = new Person(null, 'Mustermann');
 | ```assertNumber(value, config?)```  | Assert that a value is a number. Optional properties in the `config`-parameter are: <ul><li>`ignoreNullValues`: boolean, default set to `false`</li></ul> |
 | ```assertString(value)```  | Assert that a value is a string.  |
 | ```assertUri(value)```  | Assert that a value is an uri.  |
-| ```assertArray(value)```  | Assert that a value is an array.  |
+| ```assertArray(value, config?)```  | Assert that a value is an array. Optional properties in the `config`-parameter are: <ul><li>`type`: the type of the elements in the array (one of `require("typly").TYPES`)</li></ul> |
 | ```assertBoolean(value)```  | Assert that a value is a boolean.  |
 | ```assertDate(value)```  | Assert that a value is a date.  |
 | ```assertUUID(value)```  | Assert that a value is an UUID.  |
