@@ -104,6 +104,7 @@ let max = new Person(null, 'Mustermann');
 | ```isArray(value)```  | Check if a value is an array.  |
 | ```isBoolean(value)```  | Check if a value is a boolean.  |
 | ```isDate(value)```  | Check if a value is a date.  |
+| ```isUUID(value)```  | Check if a value is an UUID.  |
   
 ## Assert types
 
@@ -116,3 +117,4 @@ let max = new Person(null, 'Mustermann');
 | ```assertArray(value)```  | Assert that a value is an array.  |
 | ```assertBoolean(value)```  | Assert that a value is a boolean.  |
 | ```assertDate(value)```  | Assert that a value is a date.  |
+| ```assertUUID(value)```  | Assert that a value is an UUID.  |
