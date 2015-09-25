@@ -110,8 +110,9 @@ let max = new Person(null, 'Mustermann');
 | Method  | Description |
 | ------------- | ------------- |
 | ```assertInstanceOf(value, prototype)```  | Assert that a value is an instance of a given prototype.  |
-| ```assertNumber(value, config?)```  | Assert that a value is a number.  |
-| ```assertString(value)```  | Assert that a value is a string..  |
+| ```assertNumber(value, config?)```  | Assert that a value is a number. Optional properties in the `config`-parameter are: 
+  - `ignoreNullValues`: boolean, default set to `false` |
+| ```assertString(value)```  | Assert that a value is a string.  |
 | ```assertUri(value)```  | Assert that a value is an uri.  |
 | ```assertArray(value)```  | Assert that a value is an array.  |
 | ```assertBoolean(value)```  | Assert that a value is a boolean.  |
