@@ -1,5 +1,6 @@
 # imergo JavaScript type checker
 
+A module for checking types in JavaScript. Comes with two simple and clean APIs.
 
 ## Installation
 
@@ -108,7 +109,7 @@ let max = new Person(null, 'Mustermann');
 | ```isDate(value)```  | Check if a value is a date.  |
 | ```isUUID(value)```  | Check if a value is an UUID.  |
   
-## Assert types
+### Assert types
 
 | Method  | Description |
 | ------------- | ------------- |
