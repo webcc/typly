@@ -32,7 +32,7 @@ You can  [contact us directly!](http://www.imergo.com) or create an GitHub issue
 
 ```javascript
 "use strict";
-let typly = require("typly");
+let typly = require("typly").instance();
 console.log(typly.isNumber(5));       // Output: true
 console.log(typly.isNumber("5"));     // Output: false
 ```
@@ -41,7 +41,7 @@ console.log(typly.isNumber("5"));     // Output: false
 
 ```javascript
 "use strict";
-let typly = require("typly");
+let typly = require("typly").instance();
 console.log(typly.assertNumber(5));   // Output: true
 console.log(typly.assertNumber("5")); // Output: TypeError: number expected, but got string
 ```
@@ -50,7 +50,7 @@ console.log(typly.assertNumber("5")); // Output: TypeError: number expected, but
 
 ```javascript
 "use strict";
-let typly = require("typly");
+let typly = require("typly").instance();
 class Person {
   constructor(firstName, lastName) {
     this.firstName = firstName;
@@ -76,14 +76,19 @@ let somebodyElse = new Person(4711, 'Mustermann');  // Output: TypeError: string
 ```
 
 ### Ignoring null values
-Sometimes you may want to allow null values for properties. In this case you can use the `config()` method as shown in the following code snippet:
+Sometimes you may want to allow null values for properties. In this case you can set the `ignoreNullValues` property in the config parameter of the `instance()` method to `true` as shown in the following code snippet:
 
 ```javascript
-// let somebody = new Person(null, null);   // Output: TypeError: string expected, but got null
-typly.config({
-  ignoreNullValues: true
-});
-let somebodyElse = new Person(null, null);  // Works
+"use strict";
+let typly = require("typly").instance(
+  {
+    ignoreNullValues: true              // This ignores null values when checking for types.
+  }
+);
+class Person {
+  ...
+}
+let max = new Person(null, 'Mustermann');
 ```
 
 ## API
