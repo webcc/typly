@@ -164,4 +164,21 @@ describe("typly", () =>
       }, TypeError);
     });
   });
+  describe("#isError", () =>
+  {
+    it("should pass for errors", () =>
+    {
+      assert.ok(typly.isError(new Error()));
+    });
+  });
+  describe("#assertError", () =>
+  {
+    it("should throw a TypeError for objects", () =>
+    {
+      assert.throws(() =>
+      {
+        typly.assertError({});
+      }, TypeError);
+    });
+  });
 });
