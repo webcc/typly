@@ -181,4 +181,21 @@ describe("typly", () =>
       }, TypeError);
     });
   });
+  describe("#isRegExp", () =>
+  {
+    it("should pass for regular expressions", () =>
+    {
+      assert.ok(typly.isRegExp(/tests/));
+    });
+  });
+  describe("#assertRegExp", () =>
+  {
+    it("should throw a TypeError for objects", () =>
+    {
+      assert.throws(() =>
+      {
+        typly.assertRegExp({});
+      }, TypeError);
+    });
+  });
 });
