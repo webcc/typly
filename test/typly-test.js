@@ -1,6 +1,7 @@
 "use strict";
 let assert = require('assert');
 let typly = require("../lib/typly").instance();
+let uuid = require("uuid");
 
 describe("typly", () =>
 {
@@ -195,6 +196,28 @@ describe("typly", () =>
       assert.throws(() =>
       {
         typly.assertRegExp({});
+      }, TypeError);
+    });
+  });
+  describe("#isUUID", () =>
+  {
+    it("should pass for an UUID", () =>
+    {
+      assert.ok(typly.isUUID(uuid.v1()));
+      assert.ok(typly.isUUID(uuid.v4()));
+    });
+    it("should return false for an invalid UUID", () =>
+    {
+      assert.ok(!typly.isUUID("tests"));
+    });
+  });
+  describe("#assertUUID", () =>
+  {
+    it("should throw a TypeError for objects", () =>
+    {
+      assert.throws(() =>
+      {
+        typly.assertIdUUID({});
       }, TypeError);
     });
   });

@@ -14,6 +14,10 @@
   "dependencies": {
     "underscore": "1.8.3"
   },
+  "devDependencies": {
+    "mocha": "*",
+    "uuid": "2.0.1"
+  },
   "license": {
     "type": "Apache-2.0",
     "url": "https://github.com/webcc/typly/blob/master/LICENSE.md"
