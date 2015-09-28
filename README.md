@@ -2,6 +2,7 @@
 
 A module for checking types in JavaScript. Comes with two simple and clean APIs.
 
+![ES6](https://img.shields.io/badge/es-6-brightgreen.svg)
 ![Build passing](https://img.shields.io/badge/build-passing-brightgreen.svg)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
