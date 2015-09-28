@@ -17,12 +17,19 @@
   "devDependencies": {
     "commitizen": "^1.0.4",
     "cz-conventional-changelog": "^1.1.2",
+    "ghooks": "^0.3.2",
     "istanbul": "^0.3.21",
     "mocha": "*",
     "uuid": "2.0.1"
   },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run test:typly && npm run check-coverage"
+    }
+  },
   "scripts": {
-    "test:typly": "istanbul cover -x *.test.js _mocha -- -R spec test/*.js"
+    "test:typly": "istanbul cover -x *.test.js _mocha -- -R spec test/*.js",
+    "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100"
   },
   "license": {
     "type": "Apache-2.0",
