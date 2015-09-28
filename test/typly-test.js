@@ -5,6 +5,29 @@ let types = require("../lib/typly").TYPES;
 let uuid = require("uuid");
 describe("typly", () =>
 {
+  describe("#isObject", () =>
+  {
+    it("should return true for objects", () =>
+    {
+      assert.ok(typly.isObject({}));
+      assert.ok(typly.isObject(new Object()));
+    });
+  });
+  describe("#assertObject", () =>
+  {
+    it("should throw a TypeError for numbers", () =>
+    {
+      assert.throws(() =>
+      {
+        typly.assertObject(5);
+      }, TypeError);
+    });
+    it("should return true for objects", () =>
+    {
+      assert.ok(typly.assertObject({}));
+      assert.ok(typly.assertObject(new Object()));
+    });
+  });
   describe("#isInstanceOf", () =>
   {
     it("should return true for objects", () =>
