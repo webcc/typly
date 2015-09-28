@@ -3,12 +3,11 @@ let assert = require('assert');
 let typly = require("../lib/typly").instance();
 let types = require("../lib/typly").TYPES;
 let uuid = require("uuid");
-
 describe("typly", () =>
 {
   describe("#isInstanceOf", () =>
   {
-    it("should pass for objects", () =>
+    it("should return true for objects", () =>
     {
       assert.ok(typly.isInstanceOf({}, Object));
       assert.ok(typly.isInstanceOf(new Object(), Object));
@@ -30,9 +29,13 @@ describe("typly", () =>
   });
   describe("#isNumber", () =>
   {
-    it("should pass for numbers", () =>
+    it("should return true for numbers", () =>
     {
       assert.ok(typly.isNumber(5));
+    });
+    it("should return false for null", () =>
+    {
+      assert.ok(!typly.isNumber(null));
     });
   });
   describe("#assertNumber", () =>
@@ -44,12 +47,20 @@ describe("typly", () =>
         typly.assertNumber({});
       }, TypeError);
     });
+    it("should throw a TypeError for null", () =>
+    {
+      assert.throws(() =>
+      {
+        typly.assertNumber(null);
+      }, TypeError);
+    });
     it("should throw a TypeError with correct message", () =>
     {
       assert.throws(() =>
       {
         typly.assertNumber({});
-      }, function(error) {
+      }, function (error)
+      {
         return error.message === "number expected, but got Object";
       });
     });
@@ -68,15 +79,30 @@ describe("typly", () =>
       }));
     });
   });
+  describe("#isInRange", () =>
+  {
+    it("should return true for a number in range", () =>
+    {
+      assert.ok(typly.isInRange(2, 0, 5));
+    });
+    it("should return false for a number out of range", () =>
+    {
+      assert.ok(!typly.isInRange(-5, 0, 5));
+    });
+  });
   describe("#isString", () =>
   {
-    it("should pass for strings", () =>
+    it("should return true for strings", () =>
     {
       assert.ok(typly.isString("Example"));
     });
   });
   describe("#assertString", () =>
   {
+    it("should return true for a string", () =>
+    {
+      assert.ok(typly.assertString("tests"));
+    });
     it("should throw a TypeError for objects", () =>
     {
       assert.throws(() =>
@@ -87,9 +113,24 @@ describe("typly", () =>
   });
   describe("#isUri", () =>
   {
-    it("should pass for uris", () =>
+    it("should return true for valid uris", () =>
     {
       assert.ok(typly.isUri("http://www.example.com"));
+    });
+    it("should return false for invalid uris", () =>
+    {
+      assert.ok(!typly.isUri(":http://www.example.com"));
+    });
+    it("should return false for null", () =>
+    {
+      assert.ok(!typly.isUri(null));
+    });
+  });
+  describe("#assertUri", () =>
+  {
+    it("should return true for valid uris", () =>
+    {
+      assert.ok(typly.assertUri("http://www.example.com"));
     });
   });
   describe("#assertUri", () =>
@@ -98,18 +139,18 @@ describe("typly", () =>
     {
       assert.throws(() =>
       {
-        assert.ok(typly.assertUri("Example"));
+        assert.ok(typly.assertUri(":http://www.example.com"));
       }, TypeError);
     });
   });
   describe("#isArray", () =>
   {
-    it("should pass for arrays", () =>
+    it("should return true for arrays", () =>
     {
       assert.ok(typly.isArray([]));
       assert.ok(typly.isArray(new Array()));
     });
-    it("should pass for arrays", () =>
+    it("should return true for arrays", () =>
     {
       assert.ok(typly.isArray([]));
       assert.ok(typly.isArray(new Array()));
@@ -134,9 +175,9 @@ describe("typly", () =>
         });
       }, TypeError);
     });
-    it("should pass for arrays of certain type", () =>
+    it("should return true for arrays of certain type", () =>
     {
-      let numbers = [2,3,4,5];
+      let numbers = [2, 3, 4, 5];
       assert.ok(typly.assertArray(numbers, {
         type: types.NUMBER
       }));
@@ -144,7 +185,7 @@ describe("typly", () =>
   });
   describe("#isBoolean", () =>
   {
-    it("should pass for booleans", () =>
+    it("should return true for booleans", () =>
     {
       assert.ok(typly.isBoolean(true));
       assert.ok(typly.isBoolean(false));
@@ -152,6 +193,11 @@ describe("typly", () =>
   });
   describe("#assertBoolean", () =>
   {
+    it("should return true for booleans", () =>
+    {
+      assert.ok(typly.assertBoolean(true));
+      assert.ok(typly.assertBoolean(false));
+    });
     it("should throw a TypeError for objects", () =>
     {
       assert.throws(() =>
@@ -162,13 +208,17 @@ describe("typly", () =>
   });
   describe("#isDate", () =>
   {
-    it("should pass for dates", () =>
+    it("should return true for dates", () =>
     {
       assert.ok(typly.isDate(new Date()));
     });
   });
   describe("#assertDate", () =>
   {
+    it("should return true for dates", () =>
+    {
+      assert.ok(typly.assertDate(new Date()));
+    });
     it("should throw a TypeError for objects", () =>
     {
       assert.throws(() =>
@@ -179,13 +229,17 @@ describe("typly", () =>
   });
   describe("#isError", () =>
   {
-    it("should pass for errors", () =>
+    it("should return true for errors", () =>
     {
       assert.ok(typly.isError(new Error()));
     });
   });
   describe("#assertError", () =>
   {
+    it("should return true for errors", () =>
+    {
+      assert.ok(typly.assertError(new Error()));
+    });
     it("should throw a TypeError for objects", () =>
     {
       assert.throws(() =>
@@ -196,13 +250,17 @@ describe("typly", () =>
   });
   describe("#isRegExp", () =>
   {
-    it("should pass for regular expressions", () =>
+    it("should return true for regular expressions", () =>
     {
       assert.ok(typly.isRegExp(/tests/));
     });
   });
   describe("#assertRegExp", () =>
   {
+    it("should return true for regular expressions", () =>
+    {
+      assert.ok(typly.assertRegExp(/tests/));
+    });
     it("should throw a TypeError for objects", () =>
     {
       assert.throws(() =>
@@ -213,7 +271,7 @@ describe("typly", () =>
   });
   describe("#isUUID", () =>
   {
-    it("should pass for an UUID", () =>
+    it("should return true for an UUID", () =>
     {
       assert.ok(typly.isUUID(uuid.v1()));
       assert.ok(typly.isUUID(uuid.v4()));
@@ -222,9 +280,18 @@ describe("typly", () =>
     {
       assert.ok(!typly.isUUID("tests"));
     });
+    it("should return false for null", () =>
+    {
+      assert.ok(!typly.isUUID(null));
+    });
   });
   describe("#assertUUID", () =>
   {
+    it("should return true for an UUID", () =>
+    {
+      assert.ok(typly.assertUUID(uuid.v1()));
+      assert.ok(typly.assertUUID(uuid.v4()));
+    });
     it("should throw a TypeError for objects", () =>
     {
       assert.throws(() =>
@@ -235,17 +302,21 @@ describe("typly", () =>
   });
   describe("#isEmail", () =>
   {
-    it("should pass for an email", () =>
+    it("should return true for an email", () =>
     {
       assert.ok(typly.isEmail("mustermann@example.com"));
     });
-    it("should return false for an invalid UUID", () =>
+    it("should return false for an invalid email", () =>
     {
       assert.ok(!typly.isEmail("mustermann@@example.com"));
     });
   });
   describe("#assertEmail", () =>
   {
+    it("should return true for an email", () =>
+    {
+      assert.ok(typly.assertEmail("mustermann@example.com"));
+    });
     it("should throw a TypeError for objects", () =>
     {
       assert.throws(() =>
