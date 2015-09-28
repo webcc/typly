@@ -229,7 +229,28 @@ describe("typly", () =>
     {
       assert.throws(() =>
       {
-        typly.assertIdUUID({});
+        typly.assertUUID({});
+      }, TypeError);
+    });
+  });
+  describe("#isEmail", () =>
+  {
+    it("should pass for an email", () =>
+    {
+      assert.ok(typly.isEmail("mustermann@example.com"));
+    });
+    it("should return false for an invalid UUID", () =>
+    {
+      assert.ok(!typly.isEmail("mustermann@@example.com"));
+    });
+  });
+  describe("#assertEmail", () =>
+  {
+    it("should throw a TypeError for objects", () =>
+    {
+      assert.throws(() =>
+      {
+        typly.assertEmail("mustermann@@example.com");
       }, TypeError);
     });
   });
