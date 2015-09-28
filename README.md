@@ -20,13 +20,15 @@ Or install it globally:
 $ npm install -g typly
 ```
 
+## Prerequisites
+-  ES6 (Node.js >= 4.0.0)
+
 ## Features
 
 - Checks JavaScript basic types like numbers, strings, booleans, arrays, regular expressions
 - Checks instance of prototypes
-- Checks special types like dates, uris, UUIDs
+- Checks special types like dates, uris, UUIDs, email addresses
 - Checks ranges of numbers
-- Optionally ignores `null` values
 - Two APIs: `is`-API for checking (returns `true` or `false`) and `assert`-API for assertions (returns `true` or throws an exception)
 
 ## Getting Help
