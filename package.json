@@ -15,6 +15,8 @@
     "underscore": "1.8.3"
   },
   "devDependencies": {
+    "commitizen": "^1.0.4",
+    "cz-conventional-changelog": "^1.1.2",
     "mocha": "*",
     "uuid": "2.0.1"
   },

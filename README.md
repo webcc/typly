@@ -2,6 +2,8 @@
 
 A module for checking types in JavaScript. Comes with two simple and clean APIs.
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 ## Installation
 
 Install it locally:
