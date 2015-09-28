@@ -96,6 +96,7 @@ let somebodyElse = new Person(4711, 'Mustermann');  // Output: TypeError: string
 | ```isBoolean(value)```  | Check if a value is a boolean.  |
 | ```isDate(value)```  | Check if a value is a date.  |
 | ```isUUID(value)```  | Check if a value is an UUID.  |
+| ```isEmail(value)```  | Check if a value is an email address.  |
   
 ### Assert types
 
@@ -109,3 +110,4 @@ let somebodyElse = new Person(4711, 'Mustermann');  // Output: TypeError: string
 | ```assertBoolean(value)```  | Assert that a value is a boolean.  |
 | ```assertDate(value)```  | Assert that a value is a date.  |
 | ```assertUUID(value)```  | Assert that a value is an UUID.  |
+| ```assertEmail(value)```  | Assert that a value is an email address.  |
