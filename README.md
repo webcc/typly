@@ -78,22 +78,6 @@ let max = new Person('Max', 'Mustermann');
 let somebodyElse = new Person(4711, 'Mustermann');  // Output: TypeError: string expected, but got number
 ```
 
-### Ignoring null values
-Sometimes you may want to allow null values for properties. In this case you can set the `ignoreNullValues` property in the config parameter of the `instance()` method to `true` as shown in the following code snippet:
-
-```javascript
-"use strict";
-let typly = require("typly").instance(
-  {
-    ignoreNullValues: true              // This ignores null values when checking for types.
-  }
-);
-class Person {
-  ...
-}
-let max = new Person(null, 'Mustermann');
-```
-
 ## API
 
 ### Check types
@@ -114,7 +98,7 @@ let max = new Person(null, 'Mustermann');
 | Method  | Description |
 | ------------- | ------------- |
 | ```assertInstanceOf(value, prototype)```  | Assert that a value is an instance of a given prototype.  |
-| ```assertNumber(value, config?)```  | Assert that a value is a number. Optional properties in the `config`-parameter are: <ul><li>`ignoreNullValues`: boolean, default set to `false`</li></ul> |
+| ```assertNumber(value)```  | Assert that a value is a number. |
 | ```assertString(value)```  | Assert that a value is a string.  |
 | ```assertUri(value)```  | Assert that a value is an uri.  |
 | ```assertArray(value, config?)```  | Assert that a value is an array. Optional properties in the `config`-parameter are: <ul><li>`type`: the type of the elements in the array (one of `require("typly").TYPES`)</li></ul> |

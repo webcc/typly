@@ -6,17 +6,6 @@ let uuid = require("uuid");
 
 describe("typly", () =>
 {
-  it("should be able to ignore null values", () =>
-  {
-    assert.throws(() =>
-    {
-      typly.assertNumber({});
-    }, TypeError);
-    let typly2 = require("../lib/typly").instance({
-      ignoreNullValues: true
-    });
-    assert.ok(typly2.assertNumber(null));
-  })
   describe("#isInstanceOf", () =>
   {
     it("should pass for objects", () =>
