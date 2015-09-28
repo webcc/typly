@@ -17,8 +17,12 @@
   "devDependencies": {
     "commitizen": "^1.0.4",
     "cz-conventional-changelog": "^1.1.2",
+    "istanbul": "^0.3.21",
     "mocha": "*",
     "uuid": "2.0.1"
+  },
+  "scripts": {
+    "test:typly": "istanbul cover -x *.test.js _mocha -- -R spec test/*.js"
   },
   "license": {
     "type": "Apache-2.0",
