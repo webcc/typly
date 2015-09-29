@@ -5,6 +5,39 @@ let types = require("../lib/typly").TYPES;
 let uuid = require("uuid");
 describe("typly", () =>
 {
+  describe("#isNull", () =>
+  {
+    it("should return true for null", () =>
+    {
+      assert.ok(typly.isNull(null));
+    });
+    it("should return false for not null", () =>
+    {
+      assert.ok(!typly.isNull({}));
+      assert.ok(!typly.isNull([]));
+      assert.ok(!typly.isNull(0));
+      assert.ok(!typly.isNull(false));
+      assert.ok(!typly.isNull(new Map()));
+    });
+  });
+  describe("#assertNull", () =>
+  {
+    it("should throw a TypeError for null", () =>
+    {
+      assert.throws(() =>
+      {
+        typly.assertNull(null);
+      }, TypeError);
+    });
+    it("should return true for objects", () =>
+    {
+        assert.ok(typly.assertNull({}));
+        assert.ok(typly.assertNull([]));
+        assert.ok(typly.assertNull(0));
+        assert.ok(typly.assertNull(false));
+        assert.ok(typly.assertNull(new Map()));
+    });
+  });
   describe("#isObject", () =>
   {
     it("should return true for objects", () =>
