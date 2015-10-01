@@ -1,2 +1,3 @@
-coverage
 .npmignore
+coverage
+node_modules
