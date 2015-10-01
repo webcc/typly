@@ -5,6 +5,38 @@ let types = require("../lib/typly").TYPES;
 let uuid = require("uuid");
 describe("typly", () =>
 {
+    describe("#isFunction", () =>
+    {
+        it("should return true for functions", () =>
+        {
+            assert.ok(!typly.isFunction({}));
+            assert.ok(!typly.isFunction([]));
+            assert.ok(function(){});
+        });
+    });
+    describe("#assertFunction", () =>
+    {
+        it("should throw a TypeError for numbers", () =>
+        {
+            assert.throws(() =>
+            {
+                typly.assertFunction(5);
+            }, TypeError);
+        });
+        it("should throw a TypeError for objects", () =>
+        {
+            assert.throws(() =>
+            {
+                typly.assertFunction({});
+            }, TypeError);
+        });
+        it("should return true for arrays", () =>
+        {
+            assert.ok(typly.assertFunction(function(){}));
+        });
+    });
+
+
     describe("#isNull", () =>
     {
         it("should return true for null", () =>
