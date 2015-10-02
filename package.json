@@ -1,42 +1,43 @@
 {
-  "name": "typly",
-  "version": "0.1.0",
-  "description": "imergo type checker",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/webcc/typly.git"
-  },
-  "author": {
-    "name": "Web Compliance Center",
-    "email": "webcc@fit.fraunhofer.de"
-  },
-  "dependencies": {
-    "underscore": "1.8.3"
-  },
-  "devDependencies": {
-    "commitizen": "^1.0.4",
-    "cz-conventional-changelog": "^1.1.2",
-    "ghooks": "^0.3.2",
-    "istanbul": "^0.3.21",
-    "mocha": "*",
-    "uuid": "2.0.1"
-  },
-  "config": {
-    "ghooks": {
-      "pre-commit": "npm run test:typly && npm run check-coverage"
+    "name": "typly",
+    "description": "imergo type checker",
+    "version": "0.1.2",
+    "author": {
+        "name": "Web Compliance Center",
+        "email": "webcc@fit.fraunhofer.de"
+    },
+    "dependencies": {
+        "underscore": "1.8.3"
+    },
+    "devDependencies": {
+        "commitizen": "^1.0.4",
+        "cz-conventional-changelog": "^1.1.2",
+        "ghooks": "^0.3.2",
+        "istanbul": "^0.3.21",
+        "mocha": "*",
+        "uuid": "2.0.1"
+    },
+    "homepage": "https://github.com/webcc/typly",
+    "main": "index.js",
+    "license": {
+        "type": "Apache-2.0",
+        "url": "https://github.com/webcc/typly/blob/master/LICENSE.md"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/webcc/typly.git"
+    },
+    "readmeFilename": "README.md",
+    "engines": {
+        "node": ">=4.1.0"
+    },
+    "config": {
+        "ghooks": {
+            "pre-commit": "npm run test:typly && npm run check-coverage"
+        }
+    },
+    "scripts": {
+        "test:typly": "istanbul cover -x *.test.js _mocha -- -R spec test/*.js",
+        "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100"
     }
-  },
-  "scripts": {
-    "test:typly": "istanbul cover -x *.test.js _mocha -- -R spec test/*.js",
-    "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100"
-  },
-  "license": {
-    "type": "Apache-2.0",
-    "url": "https://github.com/webcc/typly/blob/master/LICENSE.md"
-  },
-  "engines": {
-    "node": ">=4.1.0"
-  },
-  "homepage": "https://github.com/webcc/typly"
 }
