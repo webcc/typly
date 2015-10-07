@@ -101,6 +101,7 @@ let somebodyElse = new Person(4711, 'Mustermann');  // Output: TypeError: string
 | ```isArray(value)```  | Check if a value is an array.  |
 | ```isBoolean(value)```  | Check if a value is a boolean.  |
 | ```isDate(value)```  | Check if a value is a date.  |
+| ```isDateString(value)```  | Check if a value is a date string.  |
 | ```isUUID(value)```  | Check if a value is an UUID.  |
 | ```isEmail(value)```  | Check if a value is an email address.  |
   
@@ -117,5 +118,6 @@ let somebodyElse = new Person(4711, 'Mustermann');  // Output: TypeError: string
 | ```assertArray(value, config?)```  | Assert that a value is an array. Optional properties in the `config`-parameter are: <ul><li>`type`: the type of the elements in the array (one of `require("typly").TYPES`)</li></ul> |
 | ```assertBoolean(value)```  | Assert that a value is a boolean.  |
 | ```assertDate(value)```  | Assert that a value is a date.  |
+| ```assertDateString(value)```  | Assert that a value is a date string.  | 
 | ```assertUUID(value)```  | Assert that a value is an UUID.  |
 | ```assertEmail(value)```  | Assert that a value is an email address.  |

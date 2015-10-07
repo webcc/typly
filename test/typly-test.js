@@ -328,6 +328,34 @@ describe("typly", () =>
             }, TypeError);
         });
     });
+    describe("#isDateString", () =>
+    {
+        it("should return true for dates", () =>
+        {
+            assert.ok(typly.isDateString(new Date().toString()));
+        });
+    });
+    describe("#assertDateString", () =>
+    {
+        it("should return true for dates", () =>
+        {
+            assert.ok(typly.assertDateString(new Date().toString()));
+        });
+        it("should throw a TypeError for not valid string", () =>
+        {
+            assert.throws(() =>
+            {
+                typly.assertDateString("20");
+            }, TypeError);
+        });
+        it("should throw a TypeError for object", () =>
+        {
+            assert.throws(() =>
+            {
+                typly.assertDateString({});
+            }, TypeError);
+        });
+    });
     describe("#isDate", () =>
     {
         it("should return true for dates", () =>
