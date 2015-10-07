@@ -287,7 +287,7 @@ describe("typly", () =>
                 typly.assertArray({});
             }, TypeError);
         });
-        it("should throw a TypeError for arrays that contain not only the given type", () =>
+        it("should throw a TypeError for arrays that contain not only elements of the given type", () =>
         {
             let numbers = ["tests"];
             assert.throws(() =>
@@ -297,7 +297,12 @@ describe("typly", () =>
                 });
             }, TypeError);
         });
-        it("should return true for arrays of certain type", () =>
+        it("should return true for arrays that contain only the given type", () =>
+        {
+            let numbers = [2,3,4,5];
+            assert.ok(typly.assertArray(numbers));
+        });
+        it("should return true for arrays that contain only elements of the given type", () =>
         {
             let numbers = [2, 3, 4, 5];
             assert.ok(typly.assertArray(numbers, {
