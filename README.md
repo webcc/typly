@@ -115,7 +115,7 @@ let somebodyElse = new Person(4711, 'Mustermann');  // Output: TypeError: string
 | ```assertNumber(value)```  | Assert that a value is a number. |
 | ```assertString(value)```  | Assert that a value is a string.  |
 | ```assertUri(value)```  | Assert that a value is an uri.  |
-| ```assertArray(value, config?)```  | Assert that a value is an array. Optional properties in the `config`-parameter are: <ul><li>`type`: the type of the elements in the array (one of `require("typly").TYPES`)</li></ul> |
+| ```assertArray(value, fn?)```  | Assert that a value is an array. Optionally a function can be passed that is applied for each item in the array and verifies the type of the item, for example `typly.assertArray([2,3,4,5], typly.isNumber)`|
 | ```assertBoolean(value)```  | Assert that a value is a boolean.  |
 | ```assertDate(value)```  | Assert that a value is a date.  |
 | ```assertDateString(value)```  | Assert that a value is a date string.  | 

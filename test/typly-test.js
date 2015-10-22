@@ -1,7 +1,6 @@
 "use strict";
 let assert = require('assert');
 let typly = require("../lib/typly").instance();
-let types = require("../lib/typly").TYPES;
 let uuid = require("uuid");
 describe("typly", () =>
 {
@@ -292,22 +291,18 @@ describe("typly", () =>
             let numbers = ["tests"];
             assert.throws(() =>
             {
-                typly.assertArray(numbers, {
-                    type: types.NUMBER
-                });
+                typly.assertArray(numbers, typly.isNumber);
             }, TypeError);
         });
         it("should return true for arrays that contain only the given type", () =>
         {
             let numbers = [2,3,4,5];
-            assert.ok(typly.assertArray(numbers));
+            assert.ok(typly.assertArray(numbers, typly.isNumber));
         });
         it("should return true for arrays that contain only elements of the given type", () =>
         {
             let numbers = [2, 3, 4, 5];
-            assert.ok(typly.assertArray(numbers, {
-                type: types.NUMBER
-            }));
+            assert.ok(typly.assertArray(numbers, typly.isNumber));
         });
     });
     describe("#isBoolean", () =>
