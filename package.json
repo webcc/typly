@@ -38,7 +38,7 @@
     "ghooks": {}
   },
   "scripts": {
-    "test:typly": "istanbul cover -x *.test.js _mocha -- -R spec test/*.js",
+    "coverage": "istanbul cover -x *.test.js _mocha -- -R spec test/*.js",
     "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100"
   }
 }
