@@ -1,7 +1,9 @@
 "use strict";
-let assert = require('assert');
-let typly = require("../lib/typly").instance();
+
+let assert = require("assert");
 let uuid = require("uuid");
+let typly = require("..").instance();
+
 describe("typly", () =>
 {
     describe("#isFunction", () =>
