@@ -2,154 +2,10 @@
 
 let assert = require("assert");
 let uuid = require("uuid");
-let typly = require("..").instance();
+let typly = require("..");
 
 describe("typly", () =>
 {
-    describe("#isFunction", () =>
-    {
-        it("should return true for functions", () =>
-        {
-            assert.ok(!typly.isFunction({}));
-            assert.ok(!typly.isFunction([]));
-            assert.ok(function(){});
-        });
-    });
-    describe("#assertFunction", () =>
-    {
-        it("should throw a TypeError for numbers", () =>
-        {
-            assert.throws(() =>
-            {
-                typly.assertFunction(5);
-            }, TypeError);
-        });
-        it("should throw a TypeError for objects", () =>
-        {
-            assert.throws(() =>
-            {
-                typly.assertFunction({});
-            }, TypeError);
-        });
-        it("should return true for arrays", () =>
-        {
-            assert.ok(typly.assertFunction(function(){}));
-        });
-    });
-
-
-    describe("#isNull", () =>
-    {
-        it("should return true for null", () =>
-        {
-            assert.ok(typly.isNull(null));
-        });
-        it("should return false for not null", () =>
-        {
-            assert.ok(!typly.isNull({}));
-            assert.ok(!typly.isNull([]));
-            assert.ok(!typly.isNull(0));
-            assert.ok(!typly.isNull(false));
-            assert.ok(!typly.isNull(new Map()));
-        });
-    });
-    describe("#assertNull", () =>
-    {
-        it("should throw a TypeError for null", () =>
-        {
-            assert.throws(() =>
-            {
-                typly.assertNull({});
-            }, TypeError);
-            assert.throws(() =>
-            {
-                typly.assertNull([]);
-            }, TypeError);
-            assert.throws(() =>
-            {
-                typly.assertNull([]);
-            }, TypeError);
-            assert.throws(() =>
-            {
-                typly.assertNull([]);
-            }, TypeError);
-            assert.throws(() =>
-            {
-                typly.assertNull(false);
-            }, TypeError);
-            assert.throws(() =>
-            {
-                typly.assertNull(new Map());
-            }, TypeError);
-        });
-        it("should return true for objects", () =>
-        {
-            assert.ok(typly.assertNull(null));
-        });
-    });
-    describe("#assertNotNull", () =>
-    {
-        it("should throw a TypeError for null", () =>
-        {
-            assert.throws(() =>
-            {
-                typly.assertNotNull(null);
-            }, TypeError);
-        });
-        it("should return true for objects", () =>
-        {
-            assert.ok(typly.assertNotNull({}));
-            assert.ok(typly.assertNotNull([]));
-            assert.ok(typly.assertNotNull(0));
-            assert.ok(typly.assertNotNull(false));
-            assert.ok(typly.assertNotNull(new Map()));
-        });
-    });
-    describe("#isObject", () =>
-    {
-        it("should return true for objects", () =>
-        {
-            assert.ok(typly.isObject({}));
-            assert.ok(typly.isObject(new Object()));
-        });
-    });
-    describe("#assertObject", () =>
-    {
-        it("should throw a TypeError for numbers", () =>
-        {
-            assert.throws(() =>
-            {
-                typly.assertObject(5);
-            }, TypeError);
-        });
-        it("should return true for objects", () =>
-        {
-            assert.ok(typly.assertObject({}));
-            assert.ok(typly.assertObject(new Object()));
-        });
-    });
-    describe("#isInstanceOf", () =>
-    {
-        it("should return true for objects", () =>
-        {
-            assert.ok(typly.isInstanceOf({}, Object));
-            assert.ok(typly.isInstanceOf(new Object(), Object));
-        });
-    });
-    describe("#assertInstanceOf", () =>
-    {
-        it("should throw a TypeError for numbers", () =>
-        {
-            assert.throws(() =>
-            {
-                typly.assertInstanceOf(5, Object);
-            }, TypeError);
-        });
-        it("should allow null as object", () =>
-        {
-            assert.ok(typly.assertInstanceOf(null, Object));
-        });
-    });
     describe("#isNumber", () =>
     {
         it("should return true for numbers", () =>
@@ -184,7 +40,7 @@ describe("typly", () =>
                 typly.assertNumber({});
             }, function (error)
             {
-                return error.message === "number expected, but got Object";
+                return error.message === "[tiply] Expected type number, but got type Object";
             });
         });
         it("should throw a RangeError for an invalid range", () =>

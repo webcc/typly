@@ -1,7 +1,7 @@
 {
     "name": "typly",
     "description": "imergo type checker",
-    "version": "0.1.4",
+    "version": "0.2.0",
     "author": {
         "name": "Web Compliance Center",
         "email": "webcc@fit.fraunhofer.de"
@@ -21,7 +21,7 @@
         "uuid": "2.0.1"
     },
     "homepage": "https://github.com/webcc/typly",
-    "main": "index.js",
+    "main": "./lib/typly",
     "license": {
         "type": "Apache-2.0",
         "url": "https://github.com/webcc/typly/blob/master/LICENSE.md"

@@ -43,7 +43,7 @@ You can  [contact us directly!](http://www.imergo.com) or create an GitHub issue
 
 ```javascript
 "use strict";
-let typly = require("typly").instance();
+let typly = require("typly");
 console.log(typly.isNumber(5));       // Output: true
 console.log(typly.isNumber("5"));     // Output: false
 ```
@@ -52,7 +52,7 @@ console.log(typly.isNumber("5"));     // Output: false
 
 ```javascript
 "use strict";
-let typly = require("typly").instance();
+let typly = require("typly");
 console.log(typly.assertNumber(5));   // Output: true
 console.log(typly.assertNumber("5")); // Output: TypeError: number expected, but got string
 ```
@@ -61,7 +61,7 @@ console.log(typly.assertNumber("5")); // Output: TypeError: number expected, but
 
 ```javascript
 "use strict";
-let typly = require("typly").instance();
+let typly = require("typly");
 class Person {
   constructor(firstName, lastName) {
     this.firstName = firstName;
