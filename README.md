@@ -52,29 +52,42 @@ See `examples` directory:
 
 ```javascript
 "use strict";
+
 let typly = require("typly");
+
 class Person {
-  constructor(firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
-  get firstName() {
-    return this._firstName;
-  }
-  set firstName(firstName) {
-    typly.assertString(firstName);
-    this._firstName = firstName;
-  }
-  get lastName() {
-    return this._lastName;
-  }
-  set lastName(lastName) {
-    typly.assertString(lastName);
-    this._lastName = lastName;
-  }
+    constructor(firstName, lastName)
+    {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    get firstName()
+    {
+        return this._firstName;
+    }
+
+    set firstName(firstName)
+    {
+        typly.assertString(firstName);
+        this._firstName = firstName;
+    }
+
+    get lastName()
+    {
+        return this._lastName;
+    }
+
+    set lastName(lastName)
+    {
+        typly.assertString(lastName);
+        this._lastName = lastName;
+    }
 }
-let max = new Person('Max', 'Mustermann');
-let somebodyElse = new Person(4711, 'Mustermann');  // Output: TypeError: string expected, but got number
+
+let max = new Person("Max", "Mustermann");
+let somebodyElse = new Person(4711, "Mustermann");
+// Output: TypeError: [tiply] Expected type string, but got type number
 ```
 
 ## API
@@ -83,18 +96,24 @@ let somebodyElse = new Person(4711, 'Mustermann');  // Output: TypeError: string
 
 | Method  | Description |
 | ------------- | ------------- |
-| ```isInstanceOf(value, prototype)```  | Check if a value is an instance of a given prototype.  |
-| ```isFunction(value)```  | Check if a value is function.  |
-| ```isNull(value)```  | Check if a value is null.  |
-| ```isNumber(value)```  | Check if a value is a number.  |
-| ```isString(value)```  | Check if a value is a string.  |
-| ```isUri(value)```  | Check if a value is an uri.  |
 | ```isArray(value)```  | Check if a value is an array.  |
 | ```isBoolean(value)```  | Check if a value is a boolean.  |
 | ```isDate(value)```  | Check if a value is a date.  |
 | ```isDateString(value)```  | Check if a value is a date string.  |
-| ```isUUID(value)```  | Check if a value is an UUID.  |
 | ```isEmail(value)```  | Check if a value is an email address.  |
+| ```isError(value)```  | Check if a value is a JavaScript error.  |
+| ```isFunction(value)```  | Check if a value is function.  |
+| ```isInRange(value, min, max)```  | Check if a numeric value is in the range [min, max].  |
+| ```isInstanceOf(value, prototype)```  | Check if a value is an instance of a given prototype.  |
+| ```isInteger(value)```  | Check if a value is an integer number.  |
+| ```isNull(value)```  | Check if a value is null.  |
+| ```isNumber(value)```  | Check if a value is a number.  |
+| ```isObject(value)```  | Check if a value is a JavaScript object.  |
+| ```isRegExp(value)```  | Check if a value is a JavaScript regular expression.  |
+| ```isString(value)```  | Check if a value is a string.  |
+| ```isUndefined(value)```  | Check if a value is undefined.  |
+| ```isUri(value)```  | Check if a value is an uri.  |
+| ```isUUID(value)```  | Check if a value is an UUID.  |
   
 ### Assert types
 
