@@ -96,44 +96,44 @@ let somebodyElse = new Person(4711, "Mustermann");
 
 | Method  | Description |
 | ------------- | ------------- |
-| `isArray(value[, fn])`  | Check if a value is an array. Optionally a function can be passed that is applied to each item in the array and verifies the type of the item. In case of using other typly functions, bind its context. For example: `typly.assertArray([2,3,4,5], typly.isNumber.bind(typly))` |
-| `isBoolean(value)`  | Check if a value is a boolean.  |
-| `isDate(value)`  | Check if a value is a date.  |
-| `isDateString(value)`  | Check if a value is a date string.  |
-| `isEmail(value)`  | Check if a value is an email address.  |
-| `isError(value)`  | Check if a value is a JavaScript error.  |
-| `isFunction(value)`  | Check if a value is function.  |
-| `isInRange(value, min, max)`  | Check if a numeric value is in the range [min, max].  |
-| `isInstanceOf(value, prototype)`  | Check if a value is an instance of a given prototype.  |
-| `isInteger(value)`  | Check if a value is an integer number.  |
-| `isNull(value)`  | Check if a value is null.  |
-| `isNumber(value)`  | Check if a value is a number.  |
-| `isObject(value)`  | Check if a value is a JavaScript object.  |
-| `isRegExp(value)`  | Check if a value is a JavaScript regular expression.  |
-| `isString(value)`  | Check if a value is a string.  |
-| `isUndefined(value)`  | Check if a value is undefined.  |
-| `isUri(value)`  | Check if a value is an uri.  |
-| `isUUID(value)`  | Check if a value is an UUID.  |
+| ```isArray(value[, fn])```  | Check if a value is an array. Optionally a function can be passed that is applied to each item in the array and verifies the type of the item. In case of using other typly functions, bind its context. For example: ```typly.assertArray([2,3,4,5], typly.isNumber.bind(typly))``` |
+| ```isBoolean(value)```  | Check if a value is a boolean.  |
+| ```isDate(value)```  | Check if a value is a date.  |
+| ```isDateString(value)```  | Check if a value is a date string.  |
+| ```isEmail(value)```  | Check if a value is an email address.  |
+| ```isError(value)```  | Check if a value is a JavaScript error.  |
+| ```isFunction(value)```  | Check if a value is function.  |
+| ```isInRange(value, min, max)```  | Check if a numeric value is in the range [min, max].  |
+| ```isInstanceOf(value, prototype)```  | Check if a value is an instance of a given prototype.  |
+| ```isInteger(value)```  | Check if a value is an integer number.  |
+| ```isNull(value)```  | Check if a value is null.  |
+| ```isNumber(value)```  | Check if a value is a number.  |
+| ```isObject(value)```  | Check if a value is a JavaScript object.  |
+| ```isRegExp(value)```  | Check if a value is a JavaScript regular expression.  |
+| ```isString(value)```  | Check if a value is a string.  |
+| ```isUndefined(value)```  | Check if a value is undefined.  |
+| ```isUri(value)```  | Check if a value is an uri.  |
+| ```isUUID(value)```  | Check if a value is an UUID.  |
   
 ### Assert types
 
 | Method  | Description |
 | ------------- | ------------- |
-| `assertArray(value[, fn])`  | Assert that a value is an array. Optionally a function can be passed that is applied to each item in the array and verifies the type of the item. In case of using other typly functions, bind its context. For example: `typly.assertArray([2,3,4,5], typly.isNumber.bind(typly))` |
-| `assertBoolean(value)`  | Assert that a value is a boolean.  |
-| `assertDate(value)`  | Assert that a value is a date.  |
-| `assertDateString(value)`  | Assert that a value is a date string.  |
-| `assertEmail(value)`  | Assert that a value is an email address.  |
-| `assertError(value)`  | Assert that a value is a JavaScript error.  |
-| `assertFunction(value)`  | Assert that a value is function.  |
-| `assertInstanceOf(value, prototype)`  | Assert that a value is an instance of a given prototype.  |
-| `assertInteger(value)`  | Assert that a value is an integer number.  |
-| `assertNull(value)`  | Assert that a value is null.  |
-| `assertNumber(value)`  | Assert that a value is a number.  |
-| `assertObject(value)`  | Assert that a value is a JavaScript object.  |
-| `assertRange(value, min, max)`  | Assert that a numeric value is in the range [min, max].  |
-| `assertRegExp(value)`  | Assert that a value is a JavaScript regular expression.  |
-| `assertString(value)`  | Assert that a value is a string.  |
-| `assertUndefined(value)`  | Assert that a value is undefined.  |
-| `assertUri(value)`  | Assert that a value is an uri.  |
-| `assertUUID(value)`  | Assert that a value is an UUID.  |
+| `assertArray(value[, fn])```  | Assert that a value is an array. Optionally a function can be passed that is applied to each item in the array and verifies the type of the item. In case of using other typly functions, bind its context. For example: `typly.assertArray([2,3,4,5], typly.isNumber.bind(typly))``` |
+| `assertBoolean(value)```  | Assert that a value is a boolean.  |
+| `assertDate(value)```  | Assert that a value is a date.  |
+| `assertDateString(value)```  | Assert that a value is a date string.  |
+| `assertEmail(value)```  | Assert that a value is an email address.  |
+| `assertError(value)```  | Assert that a value is a JavaScript error.  |
+| `assertFunction(value)```  | Assert that a value is function.  |
+| `assertInstanceOf(value, prototype)```  | Assert that a value is an instance of a given prototype.  |
+| `assertInteger(value)```  | Assert that a value is an integer number.  |
+| `assertNull(value)```  | Assert that a value is null.  |
+| `assertNumber(value)```  | Assert that a value is a number.  |
+| `assertObject(value)```  | Assert that a value is a JavaScript object.  |
+| `assertRange(value, min, max)```  | Assert that a numeric value is in the range [min, max].  |
+| `assertRegExp(value)```  | Assert that a value is a JavaScript regular expression.  |
+| `assertString(value)```  | Assert that a value is a string.  |
+| `assertUndefined(value)```  | Assert that a value is undefined.  |
+| `assertUri(value)```  | Assert that a value is an uri.  |
+| `assertUUID(value)```  | Assert that a value is an UUID.  |
