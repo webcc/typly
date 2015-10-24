@@ -12,6 +12,14 @@ describe("typly#ArrayTest", () =>
             assert(typly.isArray([]));
             assert(typly.isArray(new Array()));
         });
+        it("should return true for integer arrays", () =>
+        {
+            assert(typly.isArray([4, 8, 66], typly.isInteger.bind(typly)));
+        });
+        it("should return false for non-integer arrays", () =>
+        {
+            assert(!typly.isArray([4, 8, "exit"], typly.isInteger.bind(typly)));
+        });
     });
     describe("#assertArray", () =>
     {
@@ -27,7 +35,7 @@ describe("typly#ArrayTest", () =>
             let numbers = ["tests"];
             assert.throws(() =>
             {
-                typly.assertArray(numbers, typly.isNumber);
+                typly.assertArray(numbers, typly.isNumber.bind(typly));
             }, TypeError);
         });
         it("should throw a TypeError for arrays that do not contain elements of the given type", () =>
@@ -35,13 +43,13 @@ describe("typly#ArrayTest", () =>
             let numbers = [4, "tests"];
             assert.throws(() =>
             {
-                typly.assertArray(numbers, typly.isNumber);
+                typly.assertArray(numbers, typly.isNumber.bind(typly));
             }, TypeError);
         });
         it("should return true for arrays that contain only elements of the given type", () =>
         {
             let numbers = [2, 3, 4, 5];
-            assert(typly.assertArray(numbers, typly.isNumber));
+            assert(typly.assertArray(numbers, typly.isNumber.bind(typly)));
         });
     });
 });
