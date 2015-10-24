@@ -1,6 +1,6 @@
 {
     "name": "typly",
-    "description": "imergo type checker",
+    "description": "Generic Javascript type checker",
     "version": "0.2.0",
     "author": {
         "name": "Web Compliance Center",
