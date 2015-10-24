@@ -1,6 +1,6 @@
-# imergo JavaScript type checker
+# Generic Javascript type checker
 
-A module for checking types in JavaScript. The API has been built around a set of simple and clean `is*` and `assert*` functions emulating the philosophy of [underscore.js](http://underscorejs.org/). We wrap some of their `_.is*` functions.
+A module for checking types in JavaScript. The API has been built around a set of simple and clean `is*` and `assert*` functions emulating the philosophy of [underscore.js](http://underscorejs.org/). We wrap some of their `_.is*` functions. This utility was initially developed for the node modules of our [imergo® Web Compliance Suite](https://imergo.com/) as a way to ensure validity of the data passed to our ES6 class setters.
 
 ![ES6](https://img.shields.io/badge/es-6-brightgreen.svg)
 ![Build passing](https://img.shields.io/badge/build-passing-brightgreen.svg)
@@ -12,29 +12,19 @@ A module for checking types in JavaScript. The API has been built around a set o
 
 ## Features
 
-- Checks JavaScript basic types like numbers, strings, booleans, arrays, regular expressions
+- Checks JavaScript basic types like numbers, strings, booleans, arrays, dates or regular expressions
 - Checks instance of prototypes
-- Checks special types like dates, uris, UUIDs, email addresses
+- Checks special types like integers, URIs, UUIDs or email addresses
 - Checks ranges of numbers
 - Two APIs: `is`-API for checking (returns `true` or `false`) and `assert`-API for assertions (returns `true` or throws an exception)
 
 ## Installation
 
-Install it locally:
+Use `npm`:
 
 ```bash
-$ npm install typly
+$ npm install [-g] typly
 ```
-
-Or install it globally:
-
-```bash
-$ npm install -g typly
-```
-
-## Getting Help
-
-You can  [contact us directly!](http://www.imergo.com) or create an GitHub issue.
 
 ## Basic usage
 
@@ -53,10 +43,12 @@ console.log(typly.isNumber("5"));     // Output: false
 "use strict";
 let typly = require("typly");
 console.log(typly.assertNumber(5));   // Output: true
-console.log(typly.assertNumber("5")); // Output: TypeError: number expected, but got string
+console.log(typly.assertNumber("5")); // Output: TypeError: [tiply] Expected type number, but got type string
 ```
 
 ### Use case: setter validation
+
+See `examples` directory:
 
 ```javascript
 "use strict";
