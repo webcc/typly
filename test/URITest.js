@@ -11,6 +11,18 @@ describe("typly#URITest", () =>
         {
             assert(typly.isUri("http://www.example.com"));
         });
+        it("should return true for absolute uri paths", () =>
+        {
+            assert(typly.isUri("/a/path"));
+        });
+        it("should return true for relative uri paths", () =>
+        {
+            assert(typly.isUri("./a/path"));
+        });
+        it("should return true for relative uri paths", () =>
+        {
+            assert(typly.isUri("../a/path"));
+        });
         it("should return false for invalid uris", () =>
         {
             assert(!typly.isUri(":http://www.example.com"));
