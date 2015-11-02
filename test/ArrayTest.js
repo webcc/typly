@@ -14,6 +14,10 @@ describe("typly#ArrayTest", () =>
         });
         it("should return true for integer arrays", () =>
         {
+            assert(typly.isArray([4, 8, 66]));
+        });
+        it("should return true for integer arrays", () =>
+        {
             assert(typly.isArray([4, 8, 66], typly.isInteger.bind(typly)));
         });
         it("should return false for non-integer arrays", () =>
@@ -23,6 +27,14 @@ describe("typly#ArrayTest", () =>
     });
     describe("#assertArray", () =>
     {
+        it("should return true for integer arrays", () =>
+        {
+            assert(typly.assertArray([4, 8, 66]));
+        });
+        it("should return true for integer arrays", () =>
+        {
+            assert(typly.assertArray([4, 8, 66], typly.isInteger.bind(typly)));
+        });
         it("should throw a TypeError for objects", () =>
         {
             assert.throws(() =>
