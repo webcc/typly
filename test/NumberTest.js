@@ -56,10 +56,7 @@ describe("typly#NumberTest", () =>
             assert.throws(() =>
             {
                 typly.assertNumber({});
-            }, function (error)
-            {
-                return error.message === "[tiply] Expected type number, but got type Object";
-            });
+            }, TypeError);
         });
     });
     describe("#assertInteger", () =>
@@ -78,15 +75,19 @@ describe("typly#NumberTest", () =>
                 typly.assertInteger(null);
             }, TypeError);
         });
-        it("should throw a TypeError with correct message", () =>
+        it("should throw a TypeError for undefined", () =>
         {
             assert.throws(() =>
             {
                 typly.assertInteger({});
-            }, function (error)
+            }, TypeError);
+        });
+        it("should throw a TypeError for string", () =>
+        {
+            assert.throws(() =>
             {
-                return error.message === "[tiply] Expected type integer, but got type Object";
-            });
+                typly.assertInteger("4");
+            }, TypeError);
         });
     });
     describe("#isInRange", () =>
