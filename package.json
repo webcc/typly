@@ -1,7 +1,7 @@
 {
     "name": "typly",
     "description": "Generic Javascript type checker",
-    "version": "0.2.4",
+    "version": "0.2.5",
     "author": {
         "name": "Web Compliance Center",
         "email": "webcc@fit.fraunhofer.de"
