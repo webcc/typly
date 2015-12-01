@@ -105,7 +105,7 @@ let somebodyElse = new Person(4711, "Mustermann");
 | `isError(value)`  | Checks if a value is a JavaScript error.  |
 | `isFunction(value)`  | Checks if a value is function.  |
 | `isInRange(value, min, max)`  | Checks if a numeric value is in the range [min, max].  |
-| `isInstanceOf(value, prototype)`  | Checks if a value is an instance of a given prototype.  |
+| `isImplementationOf(value, prototype)`  | Checks if a value is an implementation of a given prototype.  |
 | `isInteger(value)`  | Checks if a value is an integer number.  |
 | `isNull(value)`  | Checks if a value is null.  |
 | `isNumber(value)`  | Checks if a value is a number.  |
@@ -128,7 +128,7 @@ let somebodyElse = new Person(4711, "Mustermann");
 | `assertEmpty(value)`  | Asserts that an enumerable object contains no values (no enumerable own-properties). For strings and array-like objects checks if the length property is 0. `undefined`, `null` and primitives return `true`. |
 | `assertError(value)`  | Asserts that a value is a JavaScript error.  |
 | `assertFunction(value)`  | Asserts that a value is function.  |
-| `assertInstanceOf(value, prototype)`  | Asserts that a value is an instance of a given prototype.  |
+| `assertImplementationOf(value, prototype)`  | Asserts that a value is an implementation of a given prototype.  |
 | `assertInteger(value)`  | Asserts that a value is an integer number.  |
 | `assertNull(value)`  | Asserts that a value is null.  |
 | `assertNumber(value)`  | Asserts that a value is a number.  |
