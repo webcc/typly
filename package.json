@@ -1,7 +1,7 @@
 {
     "name": "typly",
     "description": "Generic Javascript type checker",
-    "version": "0.2.5",
+    "version": "0.3.0",
     "author": {
         "name": "Web Compliance Center",
         "email": "webcc@fit.fraunhofer.de"
@@ -36,7 +36,8 @@
         "ghooks": { }
     },
     "scripts": {
-        "coverage": "istanbul cover -x *.test.js _mocha -- -R spec test/*.js",
+        "test": "mocha -R spec test/**/*Test*.js",
+        "coverage": "istanbul cover -x *.test.js _mocha -- -R spec test/**/*Test*.js",
         "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100"
     }
 }
