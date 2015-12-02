@@ -36,8 +36,8 @@
         "ghooks": { }
     },
     "scripts": {
-        "test": "mocha -R spec test/**/*Test*.js",
-        "coverage": "istanbul cover -x test/**/*Test*.js _mocha -- -R spec test/**/*Test*.js",
+        "test": "mocha -R spec --recursive",
+        "coverage": "istanbul cover -x --recursive _mocha -- -R spec --recursive",
         "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100"
     }
 }
