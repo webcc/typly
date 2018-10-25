@@ -33,7 +33,7 @@
         "node": ">=4.1.0"
     },
     "config": {
-        "ghooks": { }
+        "ghooks": {}
     },
     "scripts": {
         "test": "mocha -R spec --recursive",

@@ -1,5 +1,11 @@
 # Generic Javascript type checker
 
+---
+
+REPOSITORY NO LONGER MAINTAINED (ARCHIVE)
+
+---
+
 A module for checking types in JavaScript. The API has been built around a set of simple and clean `is*` and `assert*` functions emulating the philosophy of [underscore.js](http://underscorejs.org/). We wrap some of their `_.is*` functions. This utility was initially developed for the node modules of our [imergo® Web Compliance Suite](https://imergo.com/) as a way to ensure validity of the data passed to our ES6 class setters.
 
 ![ES6](https://img.shields.io/badge/es-6-brightgreen.svg)
